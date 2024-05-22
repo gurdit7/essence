@@ -1,0 +1,13 @@
+import Banner from "@/app/components/pages/duo-personal-training-enschede/banner/Banner"
+import ImageText from "@/app/components/pages/duo-personal-training-enschede/section-2/ImageText"
+
+const page = () => {
+  return (
+<>
+<Banner/>
+<ImageText/>
+</>
+  )
+}
+
+export default page

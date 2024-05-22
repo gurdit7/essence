@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 import "./style.css";
-import BannerImage from "../../../../assets/images/personal-training-enschede/essence_duo-training_header.jpg";
-import IconCircle from "../../../../assets/icons/IconCircle.svg";
+import BannerImage from "../../../../assets/images/duo-personal-training-enschede/duo-training_header.jpg";
 import Wrapper from "@/app/components/ui/wrapper/Wrapper";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
@@ -104,7 +103,7 @@ const Banner = () => {
         </Link>
       </Wrapper>
       <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center justify-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
-        Personal training
+      duo training
       </Wrapper>
       <Wrapper className="bg-white h-full w-[calc(16.66667%+30px)] right-0 top-0 absolute max-sm-tab:hidden"></Wrapper>
       <Wrapper className="md:w-[calc(83.33333%-30px)]">
@@ -121,7 +120,7 @@ const Banner = () => {
                     loading ? "translate-y-[0%]" : "translate-y-[110%]"
                   }`}
                 >
-                  Personal
+                  duo
                 </span>
               </span>
               <span className="overflow-hidden block">
@@ -151,25 +150,16 @@ const Banner = () => {
           <Wrapper className="md:max-w-[58.33333%] w-full px-[15px]">
             <Wrapper className="p-[1.875rem] md:p-[3.125rem] md:mt-[-5rem] mt-[-6.25rem] bg-white">
               <h1 className="text-[1.5625rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 mb-[.5em] leading-none font-bold lowercase text-dark max-sm-tab:text-[calc(1.05625rem+.675vw)]">
-                personal training enschede
+              duo personal training enschede
               </h1>
               <Wrapper className="markdown">
                 <p className="text-[1rem] md:text-[1.125rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-75 font-normal text-black leading-[1.8]">
                   <strong>
-                    Working on your goals? With your phenomenal willpower and
-                    our evidence-based approach, success is assured. The result
-                    is the healthiest, fittest, strongest and best version of
-                    yourself.
+                  Whether it's a friend, colleague or partner: training together is fun. Moreover, you keep each other sharp and motivated. The fastest way to achieving your goals!
                   </strong>
                 </p>
                 <p className="text-[1rem] md:text-[1.125rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-100 font-normal text-black leading-[1.8]">
-                  Do you really want to get started? Then our one-on-one
-                  training is exactly what you need. Let's make it personal.
-                  Your own trainer keeps you sharp and works with you to ensure
-                  that you achieve your goals. Then you will notice that you
-                  train successfully and enjoyably and that you feel better and
-                  better about yourself. Are you optimally fit? Then you will
-                  feel a lot better physically and mentally.
+                Why do many people fail to achieve their personal goals? Often because training takes a back seat. You are not training correctly. Or you lose motivation. In that case, our duo training is perfect for you. Enjoy training together with your partner, friend, neighbor, colleague... This not only makes training a lot more fun. You make the commitment together. And you also work together towards your goals.
                 </p>
               </Wrapper>
             </Wrapper>

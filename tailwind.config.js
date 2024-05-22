@@ -27,7 +27,9 @@ module.exports = {
         'dark':'#121212',
         'primary':'#e9d1ca',
         'secondary':{
-          100:'#f4f2f2'
+          100:'#f4f2f2',
+          200:'#f8f8f8',
+          900:'#183330'
         }
       },
       transitionTimingFunction: {

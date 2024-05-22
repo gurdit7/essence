@@ -63,6 +63,7 @@ transition: transform .5s cubic-bezier(.22,.61,.36,1), opacity .5s linear;
 }
 .menu-drawer .stroke-text{
     -webkit-text-stroke: .015em #fff;
+    -webkit-text-fill-color:transparent;
 }
 .menu-drawer .stroke-text::before{
     -webkit-text-fill-color:#fff;

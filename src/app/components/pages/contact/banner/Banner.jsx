@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 import "./style.css";
-import BannerImage from "../../../../assets/images/personal-training-enschede/essence_duo-training_header.jpg";
-import IconCircle from "../../../../assets/icons/IconCircle.svg";
+import BannerImage from "../../../../assets/images/contact/contact_header.jpg";
 import Wrapper from "@/app/components/ui/wrapper/Wrapper";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
@@ -10,6 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "@/app/components/ui/contianer/Container";
 import { useThemeConfig } from "@/app/contexts/theme/ThemeConfigure";
 import Link from "next/link";
+import Facebook from '../../../../assets/icons/facebook.svg'
+import Instagram from '../../../../assets/icons/instagram.svg'
 gsap.registerPlugin(ScrollTrigger);
 const Banner = () => {
   const [loading, setLoading] = useState(false);
@@ -78,7 +79,7 @@ const Banner = () => {
     
   }, []);
   return (
-    <section className="overflow-hidden relative">
+    <section className="overflow-hidden relative pb-[6.25rem] bg-secondary-200">
       <Wrapper className="absolute h-[37.5rem] w-full  left-0 top-0 translate-y-0 animation-trigger-pts z-20">
         <Link
           href="/pages/experiance"
@@ -104,11 +105,11 @@ const Banner = () => {
         </Link>
       </Wrapper>
       <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center justify-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
-        Personal training
+      contact
       </Wrapper>
       <Wrapper className="bg-white h-full w-[calc(16.66667%+30px)] right-0 top-0 absolute max-sm-tab:hidden"></Wrapper>
       <Wrapper className="md:w-[calc(83.33333%-30px)]">
-        <Wrapper className="bg-secondary-100 h-[16.25rem] md:h-[23.125rem] w-full"></Wrapper>
+        <Wrapper className="bg-primary h-[16.25rem] md:h-[23.125rem] w-full"></Wrapper>
         <Wrapper
           className={`trigger-image-animation-pts z-10 relative h-[35.625rem] md:h-[50rem]
               `}
@@ -121,7 +122,7 @@ const Banner = () => {
                     loading ? "translate-y-[0%]" : "translate-y-[110%]"
                   }`}
                 >
-                  Personal
+                  contact
                 </span>
               </span>
               <span className="overflow-hidden block">
@@ -130,7 +131,7 @@ const Banner = () => {
                     loading ? "translate-y-[0%]" : "translate-y-[-110%]"
                   }`}
                 >
-                  training
+                  essence
                 </span>
               </span>
             </p>
@@ -150,27 +151,52 @@ const Banner = () => {
         <Wrapper className="mx-[-15px] relative z-20 group trigger-training-pts">
           <Wrapper className="md:max-w-[58.33333%] w-full px-[15px]">
             <Wrapper className="p-[1.875rem] md:p-[3.125rem] md:mt-[-5rem] mt-[-6.25rem] bg-white">
-              <h1 className="text-[1.5625rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 mb-[.5em] leading-none font-bold lowercase text-dark max-sm-tab:text-[calc(1.05625rem+.675vw)]">
-                personal training enschede
-              </h1>
+
               <Wrapper className="markdown">
-                <p className="text-[1rem] md:text-[1.125rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-75 font-normal text-black leading-[1.8]">
+          
+                <p className="text-[1rem] md:text-[1.125rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-100 font-normal text-black leading-[1.8]">
+                Are you interested in fitlab and would you like to experience what it means to work on your personal goals? Please request more information without obligation and we will contact you.
+
+                </p>
+                <p className="text-[1rem] md:text-[1.5625rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-75 font-normal text-black leading-[1.2]">
                   <strong>
-                    Working on your goals? With your phenomenal willpower and
-                    our evidence-based approach, success is assured. The result
-                    is the healthiest, fittest, strongest and best version of
-                    yourself.
+                  Getfertplein 125<br/>
+7512 HK Enschede<br/>
+<a href="tel:088 90 90 806">088 90 90 806</a><br/>
+<a href="mailto:info@fitlab.nl">info@fitlab.nl</a><br/>
                   </strong>
                 </p>
-                <p className="text-[1rem] md:text-[1.125rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-100 font-normal text-black leading-[1.8]">
-                  Do you really want to get started? Then our one-on-one
-                  training is exactly what you need. Let's make it personal.
-                  Your own trainer keeps you sharp and works with you to ensure
-                  that you achieve your goals. Then you will notice that you
-                  train successfully and enjoyably and that you feel better and
-                  better about yourself. Are you optimally fit? Then you will
-                  feel a lot better physically and mentally.
-                </p>
+                <div className="socials text-base flex items-center max-lgl:flex-col max-sm-tab:flex-row">
+                find us on
+            <a
+              href="https://www.facebook.com/fitlab.nl"
+              target="_blank"
+              rel="noreferrer"
+              className="socials__link  mx-[.625rem] block"
+            >
+              <Image
+              src={Facebook.src}
+              alt="Facebook"
+              width={Facebook.width}
+              height={Facebook.height}
+              className="w-5 h-5"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/fitlab.nl"
+              target="_blank"
+              rel="noreferrer"
+              className="socials__link mx-[.625rem] block"
+            >
+<Image
+              src={Instagram.src}
+              alt="Instagram"
+              width={Instagram.width}
+              height={Instagram.height}
+              className="w-5 h-5"
+              />
+            </a>
+          </div>
               </Wrapper>
             </Wrapper>
           </Wrapper>

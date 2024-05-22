@@ -23,26 +23,26 @@ export const links = [
       label:'About'
     },
     {
-      link:'/pages/at-home',
+      link:'/pages/experience',
       label:'Experience'
     },
     {
-      link:'/pages/duo-personal-training-enschede',
+      link:'/pages/team',
       label:'Team'
     }
   ]
 
   export const menu2 = [
     {
-      link:'/pages/personal-training-enschede',
+      link:'/pages/app',
       label:'Essence: App'
     },
     {
-      link:'/pages/duo-personal-training-enschede',
+      link:'/pages/eyes',
       label:'Essence: Eyes'
     },
     {
-      link:'/pages/at-home',
+      link:'/pages/contact',
       label:'Contact'
     }
   ]
