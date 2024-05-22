@@ -1,5 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "./layouts/Header/Header";
+import Main from "./components/ui/main/Main";
+import { ThemeConfiger } from "./contexts/theme/ThemeConfigure";
+import Footer from "./layouts/Footer/Footer";
+import ProgressBar from "./components/ui/progress-bar/ProgressBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +16,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>        
+        <ThemeConfiger>
+        <ProgressBar/>
+        <Header />        
+        <Main>{children}</Main>
+        </ThemeConfiger>
+        <Footer/>
+      </body>
     </html>
   );
 }
