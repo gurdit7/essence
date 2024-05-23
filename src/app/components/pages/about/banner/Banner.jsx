@@ -62,7 +62,7 @@ const Banner = () => {
     <AnimatedTextCircle/>
       <section className="overflow-hidden relative pt-[16.25rem] md:pt-[23.125rem] bg-primary">
 
-        <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center justify-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
+        <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
           about
         </Wrapper>
         <Wrapper className="bg-white h-full w-[calc(16.66667%+30px)] right-0 top-0 z-[1] absolute max-sm-tab:hidden"></Wrapper>
@@ -99,7 +99,7 @@ const Banner = () => {
                   </h5>
                   <p className="text-[1rem] md:text-[1.125rem]  delay-100 font-normal text-white leading-[1.8]">
                     <strong>
-                      Fitlab: is a 'members only' club. As a member you have
+                      essence: is a &apos;members only&apos; club. As a member you have
                       access to our facilities, knowledge and trainers. With our
                       personal guidance and services such as Eyes On and our app
                       you get the best out of yourself!
@@ -107,7 +107,7 @@ const Banner = () => {
                   </p>
                   <h5 className="h5 text-white mt-[30px] max-lgl:font-[calc(1.05625rem+.675vw)]">back to basics</h5>
                   <p className="text-[1rem] md:text-[1.125rem]  delay-100 font-normal text-white leading-[1.8]">
-                    Training at fitlab: is not just a workout. We go back to
+                    Training at essence: is not just a workout. We go back to
                     basics and build from there. With all aspects that get you
                     in top shape. So not just the training form and movement
                     that suits you. Lifestyle elements and a healthy diet are
@@ -144,13 +144,13 @@ const Banner = () => {
               <p className="text-[1rem] md:text-[1.125rem]  delay-100 font-normal text-primary leading-[1.8]">
                 Exercising is good for you. But then you have to train and
                 exercise the right way. In combination with a lifestyle and diet
-                that is best for your body. Fitlab: creates a personal program
+                that is best for your body. essence: creates a personal program
                 for you that is based on a scientific approach. We can use what
                 we can measure and explain to get you in shape. Proven that it
                 works? Then it works for you too.
                 <br />
                 <br />
-                However and with whom you want to train: fitlab: has various
+                However and with whom you want to train: essence: has various
                 programs and options for you to help you get the best out of
                 yourself.
               </p>

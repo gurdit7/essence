@@ -5,11 +5,11 @@ import "swiper/css/navigation";
 import "swiper/css";
 import "./style.css";
 import Image from "next/image";
-import FirstSlide from "../../../../assets/images/Home/slider-home-1-fitlab.jpg";
-import SecondSlide from "../../../../assets/images/Home/slider-1-fitlab.jpg";
-import ThirdSlide from "../../../../assets/images/Home/slider-2-fitlab.jpg";
-import FourthSlide from "../../../../assets/images/Home/slider-4-fitlab.jpg";
-import FifthSlide from "../../../../assets/images/Home/slider-home-4-fitlab.jpg";
+import FirstSlide from "../../../../assets/images/Home/slider-home-1-essence.jpg";
+import SecondSlide from "../../../../assets/images/Home/slider-1-essence.jpg";
+import ThirdSlide from "../../../../assets/images/Home/slider-2-essence.jpg";
+import FourthSlide from "../../../../assets/images/Home/slider-4-essence.jpg";
+import FifthSlide from "../../../../assets/images/Home/slider-home-4-essence.jpg";
 import Wrapper from "@/app/components/ui/wrapper/Wrapper";
 import Container from "@/app/components/ui/contianer/Container";
 

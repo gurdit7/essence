@@ -13,3 +13,9 @@
     -webkit-text-stroke-color: #e9d1ca;
     -webkit-text-stroke-width: .012em;
 }
+
+.sidebar-type-outline{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #121212;
+    -webkit-text-stroke-width: .012em;
+}

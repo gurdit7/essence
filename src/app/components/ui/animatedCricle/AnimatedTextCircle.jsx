@@ -8,7 +8,7 @@ const AnimatedTextCircle = ({fill}) => {
     <Wrapper className="absolute max-h-[37.5rem] w-full  left-0 top-0 translate-y-0 animation-trigger-pts z-20">
       <Link
         href="/pages/experiance"
-        className={`absolute block z-40 md:w-[10.625rem] md:h-[10.625rem] md:top-[7.5rem] md:right-[calc(16.66667%+30px-5.3125rem)]
+        className={`absolute block  z-40 md:w-[10.625rem] md:h-[10.625rem] md:top-[7.5rem] md:right-[calc(16.66667%+30px-5.3125rem)]
       top-[3.125rem]  w-[9.375rem] h-[9.375rem] right-[-4.6875rem] before:content before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-full before:duration-[.6s] before:scale-0 hover:before:scale-50
       hover:translate-x-[-.09375rem] hover:translate-Y-[-.09375rem] duration-[.6s]
       hover:scale-[0.8]

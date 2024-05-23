@@ -211,8 +211,8 @@ const ImageText = () => {
                 “You can do it!” Of course you can. Because Personal Training is
                 really more than a trainer who encourages you during your
                 workout. It is the combination of 1] exercising the right way,
-                2] a conscious lifestyle and 3] a healthy diet. That's what
-                fitlab is building: together with you. In a way that suits you.
+                2] a conscious lifestyle and 3] a healthy diet. That&apos;s what
+                essence is building: together with you. In a way that suits you.
               </p>
             </Wrapper>
           </Wrapper>
@@ -314,7 +314,7 @@ const ImageText = () => {
                     Working hard towards your goals? Then of course you also
                     want to see results. Our essence: app not only gives you
                     insight into your development, but also helps you on your
-                    way to a healthy eating pattern. With today's options, we
+                    way to a healthy eating pattern. With today&apos;s options, we
                     can make personal training a lot more manageable for you.
                   </p>
                   <Link
@@ -347,7 +347,7 @@ const ImageText = () => {
                     necessary.
                   </p>
                   <Link
-                      href='/pages/eye'        
+                      href='/pages/eyes'        
                       data-text='Show me more'
                       onClick={pageChanger}            
                       className="cursor-pointer translate-y-[20%]  group-[.is-shown]:translate-y-[0%] opacity-0 group-[.is-shown]:opacity-100 text-[30px] tracking-[.02em] inline-block ease-cubic-22 duration-1000 relative font-bold leading-[1.3] stroke-text-link lowercase before:content-[attr(data-text)] before:absolute before:top-[0px] before:left-0 before:whitespace-nowrap before:max-w-0 before:duration-[.8s] before:ease-cubic-22 before:transition-all before:overflow-hidden hover:before:max-w-full"

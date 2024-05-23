@@ -5,11 +5,11 @@ import "swiper/css/navigation";
 import "swiper/css";
 import "./style.css";
 import Image from "next/image";
-import FirstSlide from "../../../../assets/images/Home/slider-home-1-fitlab.jpg";
-import SecondSlide from "../../../../assets/images/Home/slider-1-fitlab.jpg";
-import ThirdSlide from "../../../../assets/images/Home/slider-2-fitlab.jpg";
-import FourthSlide from "../../../../assets/images/Home/slider-4-fitlab.jpg";
-import FifthSlide from "../../../../assets/images/Home/slider-home-4-fitlab.jpg";
+import FirstSlide from "../../../../assets/images/Home/slider-home-1-essence.jpg";
+import SecondSlide from "../../../../assets/images/Home/slider-1-essence.jpg";
+import ThirdSlide from "../../../../assets/images/Home/slider-2-essence.jpg";
+import FourthSlide from "../../../../assets/images/Home/slider-4-essence.jpg";
+import FifthSlide from "../../../../assets/images/Home/slider-home-4-essence.jpg";
 import Wrapper from "@/app/components/ui/wrapper/Wrapper";
 import Container from "@/app/components/ui/contianer/Container";
 import Link from "next/link";
@@ -147,17 +147,17 @@ const ImageAndText = () => {
               <p className="text-[1rem] md:text-[1.125rem]  delay-100 font-normal text-dark leading-[1.8]">
                 <strong>
                   {" "}
-                  Want to get the best out of yourself? Let's get personal.
-                  Fitlab: is a 'members only' club for effective personal
+                  Want to get the best out of yourself? Let&apos;s get personal.
+                  essence: is a &apos;members only&apos; club for effective personal
                   training, a conscious lifestyle and a healthy diet. With our
                   personal trainers and high-tech tools you ensure results!
                 </strong>
               </p>
               <h5 className="h5 text-dark mt-[3.125rem] mb-[.8em] max-lgl:text-[calc(1.05625rem+.675vw)]">
-                our fitlab: experience program
+                our essence: experience program
               </h5>
               <p className="text-[1rem] md:text-[1.125rem]  delay-100 font-normal text-dark leading-[1.8]">
-                Would you like to register for our fitlab: experience program?
+                Would you like to register for our essence: experience program?
                 Which can! We will give you one free personal training of 30
                 minutes. There are no further obligations attached to this.
               </p>
@@ -279,7 +279,7 @@ const ImageAndText = () => {
                     }`}
                   >
                     <p>
-                      Absolute! We also provide training at people's homes, at
+                      Absolute! We also provide training at people&apos;s homes, at
                       work or outside. Please contact us for further questions
                     </p>
                   </div>
@@ -301,7 +301,7 @@ const ImageAndText = () => {
                     <p>
                       The exploratory meeting is of course free and completely
                       without obligation. This conversation will take place at
-                      fitlab at Getfertplein 125 in Enschede while enjoying a
+                      essence at Getfertplein 125 in Enschede while enjoying a
                       cup of coffee or tea. Here we get to know each other and
                       it quickly becomes clear what we can do for you and
                       whether we can get started.
@@ -323,10 +323,10 @@ const ImageAndText = () => {
                     }`}
                   >
                     <p>
-                      Because every person is unique and because Fitlab works
+                      Because every person is unique and because essence works
                       tailor-made, prices can vary per person depending on the
                       objectives and the resources needed to achieve the goal.
-                      You can feel free to make an appointment with fitlab for a
+                      You can feel free to make an appointment with essence for a
                       no-obligation introductory meeting and/or trial training,
                       then the options and costs can be discussed.
                     </p>
@@ -379,7 +379,7 @@ const ImageAndText = () => {
                       whether you can follow Personal Training and what you
                       should take into account. Please take this advice into
                       account. You can also always ask your doctor or
-                      physiotherapist to contact Fitlab. Personal Training can
+                      physiotherapist to contact essence. Personal Training can
                       often serve as a supplement to treatment and any
                       limitations are taken into account during the training.
                     </p>

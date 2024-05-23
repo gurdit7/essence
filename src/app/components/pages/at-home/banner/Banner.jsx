@@ -9,11 +9,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "@/app/components/ui/contianer/Container";
 import { useThemeConfig } from "@/app/contexts/theme/ThemeConfigure";
 import AnimatedTextCircle from "@/app/components/ui/animatedCricle/AnimatedTextCircle";
+import { usePathname } from "next/navigation";
+
 gsap.registerPlugin(ScrollTrigger);
 const Banner = () => {
+  const path = usePathname();
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
-  const { setMenuColor, progress, setHeaderMode , setMenuBgColor } =
+  const { setMenuColor, progress, setHeaderMode, setMenuBgColor } =
     useThemeConfig();
   useEffect(() => {
     setTimeout(() => {
@@ -25,7 +28,7 @@ const Banner = () => {
     setHeaderMode(true);
     setImageLoading(true);
     setTimeout(() => {
-      setLoading(true);   
+      setLoading(true);
     }, 1000);
     const bar = gsap.timeline({
       scrollTrigger: {
@@ -51,6 +54,7 @@ const Banner = () => {
         onLeaveBack: ({ progress, direction, isActive }) => {},
       },
     });
+if(path === '/pages/at-home'){
     const imageAnimation = gsap.utils.toArray(".trigger-image-animation-pts");
     gsap.timeline({
       scrollTrigger: {
@@ -61,35 +65,36 @@ const Banner = () => {
         markers: false,
         onEnter: ({ progress, direction, isActive }) => {
           setMenuColor(false);
-          setMenuBgColor(false)
+          setMenuBgColor(false);
         },
         onEnterBack: ({ progress, direction, isActive }) => {
           setMenuColor(false);
-          setMenuBgColor(false)
+          setMenuBgColor(false);
         },
         onLeave: ({ progress, direction, isActive }) => {
           setMenuColor(true);
-          setMenuBgColor(true)
+          setMenuBgColor(true);
         },
         onLeaveBack: ({ progress, direction, isActive }) => {
           setMenuColor(true);
-          setMenuBgColor(true)
+          setMenuBgColor(true);
         },
       },
     });
+  }
   }, []);
   return (
     <>
       <AnimatedTextCircle />
       <section className="overflow-hidden relative">
-        <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center justify-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
+        <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
           at home
         </Wrapper>
         <Wrapper className="bg-white h-full w-[calc(16.66667%+30px)] right-0 top-0 absolute max-sm-tab:hidden"></Wrapper>
         <Wrapper className="md:w-[calc(83.33333%-30px)]">
           <Wrapper className="bg-secondary-100 h-[16.25rem] md:h-[23.125rem] w-full"></Wrapper>
           <Wrapper
-            className={`trigger-image-animation-pts z-10 relative h-[35.625rem] md:h-[50rem]
+            className={`trigger-image-animation-pts z-10 relative h-[35.625rem] md:h-[50rem] 
               `}
           >
             <Wrapper className="pl-[1.875rem] lgl:pl-[calc(50vw-570px)] animation-trigger relative z-10">
@@ -114,15 +119,18 @@ const Banner = () => {
                 </span>
               </p>
             </Wrapper>
-
-            <Image
-              className={`object-cover absolute top-0 left-0 w-full h-full duration-1000 ease-cubic-22 delay-[.3s]`}
-              alt="Banner Image"
-              src={BannerImage.src}
-              sizes="100vw"
-              width={BannerImage.width}
-              height={BannerImage.height}
-            />
+            <Wrapper className='overflow-hidden absolute top-0 w-full h-full left-0 bg-dark'>
+            <iframe
+              src="https://player.vimeo.com/video/404515682?loop=1&amp;background=1&amp;app_id=122963"
+              width="426"
+              height="240"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              title="Fitlab at home - Hero"
+              data-ready="true"
+              className="absolute top-0 left-1/2 w-[100vw] min-w-[177.77vh] h-[56.25vw] min-h-[100vh] translate-x-[-50%]"
+      
+            ></iframe></Wrapper>
           </Wrapper>
         </Wrapper>
         <Container>

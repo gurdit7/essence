@@ -70,7 +70,7 @@ const Banner = () => {
     <AnimatedTextCircle fill="#e9d1ca"/>
     <section className="overflow-hidden relative bg-dark z-[1]">
    
-      <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center justify-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
+      <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
         essence: app
       </Wrapper>
       <Wrapper className="bg-white h-full w-[calc(16.66667%+30px)] right-0 top-0 absolute max-sm-tab:hidden"></Wrapper>
@@ -118,12 +118,12 @@ const Banner = () => {
             <Wrapper className="p-[1.875rem] md:p-[3.125rem] md:mt-[-5rem] mt-[-6.25rem] before:absolute before:content before:w-full before:top-0 before:left-0 before:h-[7.5rem] before:bg-dark">
               <Wrapper className="markdown relative z-10">
                 <p className="text-[1rem] md:text-[1.125rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-100 font-normal text-white leading-[1.8]">
-                  Working hard towards your goals? Then of course you also want to see results. Our fitlab: app not only gives you insight into your development, but also helps you on your way to a healthy eating pattern.
+                  Working hard towards your goals? Then of course you also want to see results. Our essence: app not only gives you insight into your development, but also helps you on your way to a healthy eating pattern.
                 </p>
 
                 <Wrapper className='mt-[1.2em] text-primary font-bold leading-[1.2] text-[1.5625rem] mb-[.8em]'>your progress? check!</Wrapper>
                 <p className="text-[1rem] md:text-[1.125rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-100 font-normal text-white leading-[1.8]">
-                  With today's options, we can make personal training a lot more manageable for you. With our fitlab: app for example. It offers various practical functions that support you in your training process. For example, you can track your workouts and view your progress. And together with your trainer you can analyze your personal development and results.
+                  With today&apos;s options, we can make personal training a lot more manageable for you. With our essence: app for example. It offers various practical functions that support you in your training process. For example, you can track your workouts and view your progress. And together with your trainer you can analyze your personal development and results.
                 </p>
               </Wrapper>
             </Wrapper>
@@ -138,7 +138,7 @@ const Banner = () => {
               <Wrapper className='md:max-w-[41.66667%] px-[15px]'>
                 <Wrapper className='text-primary font-bold leading-[1.2] text-[1.5625rem] mb-[.8em]'>tailor-made nutritional programs</Wrapper>
                 <p className="text-[1rem] duration-500 group-[.is-shown]:opacity-100 delay-100 font-normal text-white leading-[1.8]">
-                  Nutrition is an important aspect of a healthy life. We probably don't have to tell you that. The app helps you to gain a good insight into your diet. With a nutrition program tailor-made for you, you can keep track of what you eat and how you can achieve the fastest results with a diet that suits you.
+                  Nutrition is an important aspect of a healthy life. We probably don&apos;t have to tell you that. The app helps you to gain a good insight into your diet. With a nutrition program tailor-made for you, you can keep track of what you eat and how you can achieve the fastest results with a diet that suits you.
                 </p>
               </Wrapper>
             </Wrapper></Wrapper>
