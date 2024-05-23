@@ -79,3 +79,24 @@ transition: transform .5s cubic-bezier(.22,.61,.36,1), opacity .5s linear;
 .menu-drawer .active-link-sm::before{
     max-width: 0%;
 }
+
+
+#homepage header .site-logo svg path{
+    @apply fill-white;
+   }
+   #homepage .hamburger-toggle .wrapper__hamburger span:first-child::after,
+   #homepage header  .hamburger-toggle span{
+@apply bg-white;
+   }
+   
+   #homepage.active header .site-logo svg path{
+    @apply fill-dark;
+   }
+   #homepage.active .hamburger-toggle .wrapper__hamburger span:first-child::after,
+   #homepage.active header  .hamburger-toggle span{
+@apply bg-dark;
+   }
+   
+   #homepage.active .hamburger-toggle{
+  @apply  bg-[#f4f2f2]
+   }

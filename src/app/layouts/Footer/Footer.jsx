@@ -55,9 +55,9 @@ const Footer = () => {
     setRadioValue(e.target.value);
   };
   return (
-    <footer className="mb-[12.5rem] md:mb-[6.25rem] group">
-      <Wrapper className="bg-[#183330] pb-[6.25rem] relative z-10">
-        <Wrapper className="lgl:py-[3.75rem] smm:py-[4vw]"> 
+    <footer className="mb-[12.5rem] md:mb-[6.25rem] group ">
+      <Wrapper className="bg-[#183330] pb-[10vw] md:pb-[6.25rem] relative z-10">
+        <Wrapper className="lgl:py-[3.75rem] smm:py-[4vw] py-[1.875rem]"> 
           <Wrapper className="marquee overflow-hidden whitespace-nowrap relative z-10">
             <Wrapper className="marquee__track inline-flex">
               <h2 className="type-outline max-lgl:text-[calc(1.525rem+6.3vw)] text-[6.25rem] font-bold leading-none text-dark mb-[0em]">
@@ -170,7 +170,7 @@ const Footer = () => {
           </Wrapper>
         </Container>
       </Wrapper>
-      <Wrapper className="footer-address fixed bottom-0 w-full left-0 p-[35px] z-[-1] md:h-[6.25rem] h-[12.5rem] hidden group-[.is-shown]:block">
+      <Wrapper className="footer-address z-[1] fixed bottom-0 w-full left-0 p-[35px]  md:h-[6.25rem] h-[12.5rem] hidden group-[.is-shown]:block">
         <address className="not-italic flex justify-center items-center max-sm-tab:flex-col">
           <p className="text-[grey] max-sm-tab:text-base text-center">
             Getfertplein 125, 7512 HK Enschede,{" "}
@@ -179,10 +179,10 @@ const Footer = () => {
             </a>
             ,{" "}
             <a
-              href="mailto:info@fitlab.nl"
+              href="mailto:info@essence.nl"
               className="text-[#6c757d] underline"
             >
-              info@fitlab.nl
+              info@essence.nl
             </a>
             , Identity & website by{" "}
             <a
@@ -195,7 +195,7 @@ const Footer = () => {
           </p>
           <div className="socials lgl:ml-[3.125rem] flex items-center max-lgl:flex-col max-sm-tab:flex-row">
             <a
-              href="https://www.facebook.com/fitlab.nl"
+              href="https://www.facebook.com/essence.nl"
               target="_blank"
               rel="noreferrer"
               className="socials__link  mx-[.625rem] block"
@@ -209,7 +209,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://www.instagram.com/fitlab.nl"
+              href="https://www.instagram.com/essence.nl"
               target="_blank"
               rel="noreferrer"
               className="socials__link mx-[.625rem] block"

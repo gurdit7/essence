@@ -2,20 +2,21 @@
 import Image from "next/image";
 import "./style.css";
 import BannerImage from "../../../../assets/images/personal-training-enschede/essence_duo-training_header.jpg";
-import IconCircle from "../../../../assets/icons/IconCircle.svg";
 import Wrapper from "@/app/components/ui/wrapper/Wrapper";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "@/app/components/ui/contianer/Container";
 import { useThemeConfig } from "@/app/contexts/theme/ThemeConfigure";
-import Link from "next/link";
 import AnimatedTextCircle from "@/app/components/ui/animatedCricle/AnimatedTextCircle";
+import { usePathname } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 const Banner = () => {
+  const path = usePathname();
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
-  const { setMenuColor, progress, setHeaderMode , setMenuBgColor } =
+  const pageRef = useRef();
+  const { progress } =
     useThemeConfig();
   useEffect(() => {
     setTimeout(() => {
@@ -23,8 +24,7 @@ const Banner = () => {
     }, 500);
   }, [progress]);
   useEffect(() => {
-    setMenuColor(true);
-    setHeaderMode(true);
+    pageRef?.current?.ownerDocument?.documentElement?.setAttribute('id','personal-training')
     setImageLoading(true);
     setTimeout(() => {
       setLoading(true);   
@@ -53,6 +53,7 @@ const Banner = () => {
         onLeaveBack: ({ progress, direction, isActive }) => {},
       },
     });
+    if(path === '/pages/personal-training-enschede'){
     const imageAnimation = gsap.utils.toArray(".trigger-image-animation-pts");
     gsap.timeline({
       scrollTrigger: {
@@ -62,29 +63,27 @@ const Banner = () => {
         scrub: 1,
         markers: false,
         onEnter: ({ progress, direction, isActive }) => {
-          setMenuColor(false);
-          setMenuBgColor(false)
+
         },
         onEnterBack: ({ progress, direction, isActive }) => {
-          setMenuColor(false);
-          setMenuBgColor(false)
+       
         },
         onLeave: ({ progress, direction, isActive }) => {
-          setMenuColor(true);
-          setMenuBgColor(true)
+       
         },
         onLeaveBack: ({ progress, direction, isActive }) => {
-          setMenuColor(true);
-          setMenuBgColor(true)
+    
         },
       },
     });
+  }
   }, []);
+  
   return (
     <>
       <AnimatedTextCircle />
-      <section className="overflow-hidden relative">
-        <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center justify-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
+      <section className="overflow-hidden relative" ref={pageRef}>
+        <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
           Personal training
         </Wrapper>
         <Wrapper className="bg-white h-full w-[calc(16.66667%+30px)] right-0 top-0 absolute max-sm-tab:hidden"></Wrapper>
@@ -145,7 +144,7 @@ const Banner = () => {
                   </p>
                   <p className="text-[1rem] md:text-[1.125rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-100 font-normal text-black leading-[1.8]">
                     Do you really want to get started? Then our one-on-one
-                    training is exactly what you need. Let's make it personal.
+                    training is exactly what you need. Let&apos;s make it personal.
                     Your own trainer keeps you sharp and works with you to
                     ensure that you achieve your goals. Then you will notice
                     that you train successfully and enjoyably and that you feel

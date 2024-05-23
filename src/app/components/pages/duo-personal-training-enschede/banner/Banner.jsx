@@ -9,8 +9,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "@/app/components/ui/contianer/Container";
 import { useThemeConfig } from "@/app/contexts/theme/ThemeConfigure";
 import AnimatedTextCircle from "@/app/components/ui/animatedCricle/AnimatedTextCircle";
+import { usePathname } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 const Banner = () => {
+  const path = usePathname();
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
   const { setMenuColor, progress, setHeaderMode, setMenuBgColor } =
@@ -51,6 +53,7 @@ const Banner = () => {
         onLeaveBack: ({ progress, direction, isActive }) => {},
       },
     });
+    if(path === '/pages/duo-personal-training-enschede'){
     const imageAnimation = gsap.utils.toArray(".trigger-image-animation-pts");
     gsap.timeline({
       scrollTrigger: {
@@ -77,6 +80,7 @@ const Banner = () => {
         },
       },
     });
+  }
   }, []);
   return (
     <>
@@ -84,7 +88,7 @@ const Banner = () => {
     
     <section className="overflow-hidden relative">
   
-      <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center justify-center font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
+      <Wrapper className="sidebar-type-outline max-sm-tab:hidden lowercase  h-[calc(16.66667vw+30px)] max-lgl:text-[calc(2.0875rem+13.05vw)] flex items-center  font-bold text-[11.875rem] absolute top-[-.9375rem] left-full z-50 min-w-[100vh] whitespace-nowrap pointer-events-none leading-none rotate-90 origin-top-left">
       duo training
       </Wrapper>
       <Wrapper className="bg-white h-full w-[calc(16.66667%+30px)] right-0 top-0 absolute max-sm-tab:hidden"></Wrapper>
@@ -137,7 +141,7 @@ const Banner = () => {
               <Wrapper className="markdown">
                 <p className="text-[1rem] md:text-[1.125rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-75 font-normal text-black leading-[1.8]">
                   <strong>
-                  Whether it's a friend, colleague or partner: training together is fun. Moreover, you keep each other sharp and motivated. The fastest way to achieving your goals!
+                  Whether it&apos;s a friend, colleague or partner: training together is fun. Moreover, you keep each other sharp and motivated. The fastest way to achieving your goals!
                   </strong>
                 </p>
                 <p className="text-[1rem] md:text-[1.125rem] opacity-0 duration-500 group-[.is-shown]:opacity-100 delay-100 font-normal text-black leading-[1.8]">

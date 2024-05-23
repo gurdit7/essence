@@ -314,7 +314,7 @@ const ImageText = () => {
                     Working hard towards your goals? Then of course you also
                     want to see results. Our essence: app not only gives you
                     insight into your development, but also helps you on your
-                    way to a healthy eating pattern. With today's options, we
+                    way to a healthy eating pattern. With today&apos;s options, we
                     can make personal training a lot more manageable for you.
                   </p>
                   <Link
