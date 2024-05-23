@@ -1,0 +1,7 @@
+.stroke-text{
+-webkit-text-stroke: .015em #121212;
+-webkit-text-fill-color: transparent;
+}
+.stroke-text::before{
+    -webkit-text-fill-color:#121212;
+}

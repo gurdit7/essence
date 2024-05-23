@@ -1,0 +1,14 @@
+footer .type-outline{
+-webkit-text-stroke-color: #e9d1ca;
+}
+.outline-stroke{
+-webkit-text-fill-color: transparent;
+-webkit-text-stroke: .0625rem #fff;
+}
+.submit-stroke{
+-webkit-text-stroke: .015em #fff;
+-webkit-text-fill-color: transparent;
+}
+.submit-stroke::before{
+    -webkit-text-fill-color:#fff;
+}

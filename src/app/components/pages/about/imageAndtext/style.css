@@ -1,0 +1,32 @@
+button:hover .dark-next::before{
+    opacity: 1;
+    transition: transform .5s cubic-bezier(.22,.61,.36,1) .2s, opacity .2s linear .2s;
+    transform: scale3d(.97, .97, 1);
+}
+button:hover .arrow-next{
+-webkit-animation: marquee 1.4s linear infinite;
+animation: marquee 1.4s linear infinite;
+}
+@keyframes marquee {
+    0% {
+        transform: translate3d(100%,0,0)
+    }
+
+    0% {
+        transform: translate3d(-100%,0,0)
+    }
+}
+
+.next-circle{
+-webkit-animation: rotation 30s linear infinite;
+animation: rotation 30s linear infinite;
+}
+.type-outline-stroke{
+-webkit-text-stroke-color: #fff;
+-webkit-text-stroke-width: .012em;
+-webkit-text-fill-color: transparent;
+}
+
+.accordion-content *{
+@apply text-base text-black leading-[1.8] max-sm-tab:text-[.9375rem];
+}

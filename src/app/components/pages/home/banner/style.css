@@ -1,0 +1,23 @@
+.outline-text{
+-webkit-text-stroke-color: #fff;
+-webkit-text-stroke-width: .012em;
+-webkit-text-fill-color: transparent;
+}
+
+
+.right-text{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+     -webkit-text-stroke-width: .012em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #fff;
+}
+
+.video-teaser__btn__text.is-paused::before{
+    transform: translateZ(0);
+}
+.video-teaser__btn__text.is-paused::after{
+    transform: translateY(110%);
+}

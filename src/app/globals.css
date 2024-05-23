@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('./assets/fonts/Gilroy-Bold.eot');
+    src: url('./assets/fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Gilroy-Bold.woff2') format('woff2'),
+        url('./assets/fonts/Gilroy-Bold.woff') format('woff'),
+        url('./assets/fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./assets/fonts/Gilroy-Regular.eot');
+    src: url('./assets/fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Gilroy-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Gilroy-Regular.woff') format('woff'),
+        url('./assets/fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+}
+*{
+  @apply font-gilroy;
+}
+body .is-visible{
+  opacity: 1;
+  transform: none;
+}
+@keyframes rotation {
+  0% {
+      transform: rotate(0)
+  }
+
+  to {
+      transform: rotate(1turn)
+  }
+}
+body {
+  @apply text-[1.125rem] font-normal leading-[1.8] text-black;
+}
+h1, h2, h3, h4, h5, h6{
+  @apply mb-[.5em];
+}
+p{
+  @apply mb-[1rem];
+}
+.animated-circle-pts svg,
+.teaser-circle__icon{
+  will-change: transform;
+  transform: rotate(0);
+  -webkit-animation: rotation 30s linear infinite;
+  animation: rotation 30s linear infinite;
+  }
+  .h3{
+    @apply text-[4.375rem] max-sm-tab:text-[calc(1.3375rem+4.05vw)] lowercase leading-none font-bold;
+  }
+  .h5{
+@apply text-[1.5625rem] lowercase leading-none font-bold;
+  }
+  .type-outline{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #121212;
+    -webkit-text-stroke-width: .012em;
+    }
+    
+.marquee__track{
+  -webkit-animation: marqueeAnimation 50s linear infinite;
+  animation: marqueeAnimation 50s linear infinite;
+  }
+  @keyframes marqueeAnimation {
+      0% {
+          transform: translateZ(0)
+      }
+  
+      to {
+          transform: translate3d(-100%,0,0)
+      }
+  }

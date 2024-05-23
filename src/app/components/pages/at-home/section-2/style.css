@@ -1,0 +1,8 @@
+.stroke-text-link{
+    -webkit-text-stroke-color: #e9d1ca;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: .016em;
+}
+.stroke-text-link::before{
+-webkit-text-fill-color: #e9d1ca;
+}
