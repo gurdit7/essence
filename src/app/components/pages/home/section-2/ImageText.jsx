@@ -8,14 +8,15 @@ import PersonalTrainingFirstImage from "../../../../assets/images/Home/fitlab-pe
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { links } from "@/app/data/default";
 import { usePathname } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 const ImageText = () => {
   const path = usePathname();
-  const { setBgColor } = useThemeConfig();
+  const [bgColor, setBgColor] = useState('bg-[#f8f8f8]');
+  const {pageChanger } = useThemeConfig();
   useEffect(() => {
     const panels = gsap.utils.toArray(".trigger-animation-section-2");
     gsap.timeline({
@@ -82,6 +83,7 @@ const ImageText = () => {
     });
   }, []);
   return (
+    <>
     <section className="pt-[10vw] md:pt-[6.25rem] relative overflow-hidden">
       <Wrapper className="bg-primary h-full w-[calc(16.66667%+30px)] right-0 top-0 absolute max-sm-tab:hidden"></Wrapper>
       <Container className="max-w-[1280px] w-full mx-auto trigger-animation-section-2 group relative z-10">
@@ -211,9 +213,10 @@ const ImageText = () => {
                 return(
                   <li key={index} className="overflow-hidden">                
                   <Link
+                      onClick={pageChanger}
                     href={item.link}
                     data-text={item.label}
-                    className=" max-lgl:text-[calc(1.3375rem+4.05vw)] text-[4.375rem] w-full inline-block group-[.is-shown]:translate-y-[0%] translate-y-[101%] ease-cubic-22 duration-1000 delay-[.15s] relative font-bold leading-[1.2] stroke-text lowercase before:content-[attr(data-text)] before:absolute before:top-[0px] before:left-0 before:whitespace-nowrap  before:max-w-0 before:duration-[.8s] before:ease-cubic-22 before:transition-all before:overflow-hidden hover:before:max-w-full"
+                    className=" max-lgl:text-[calc(1.3375rem+4.05vw)] text-[4.375rem] inline-block group-[.is-shown]:translate-y-[0%] translate-y-[101%] ease-cubic-22 duration-1000 delay-[.15s] relative font-bold leading-[1.2] stroke-text lowercase before:content-[attr(data-text)] before:absolute before:top-[0px] before:left-0 before:whitespace-nowrap  before:max-w-0 before:duration-[.8s] before:ease-cubic-22 before:transition-all before:overflow-hidden hover:before:max-w-full"
                   >
                     {item.label}
                   </Link>
@@ -225,6 +228,8 @@ const ImageText = () => {
         </Wrapper>
       </Container>
     </section>
+    <Wrapper className={`duration-[1s] ease-in-out fixed top-0 left-0 w-full bottom-0 h-full z-[-2] ${bgColor}`}></Wrapper>
+    </>
   );
 };
 

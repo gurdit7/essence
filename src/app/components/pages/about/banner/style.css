@@ -1,0 +1,15 @@
+.ex-type-outline{
+-webkit-text-fill-color: transparent;
+-webkit-text-stroke-color: #fff;
+-webkit-text-stroke-width: .012em;
+}
+.stroke-text-primary{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #e9d1ca;
+    -webkit-text-stroke-width: .012em;
+}
+.stroke-text-primary::before{
+    -webkit-text-fill-color: #e9d1ca;
+    -webkit-text-stroke-color: #e9d1ca;
+    -webkit-text-stroke-width: .012em;
+}

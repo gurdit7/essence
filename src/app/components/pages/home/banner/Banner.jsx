@@ -12,48 +12,60 @@ import { useThemeConfig } from "@/app/contexts/theme/ThemeConfigure";
 gsap.registerPlugin(ScrollTrigger);
 const Banner = () => {
   const [loading, setLoading] = useState(false);
+  const [bannerTextLoad, setBannerTextLoad] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
   const [video, setVideo] = useState(false);
   const videoRef = useRef();
-  const {setMenuColor,progress} = useThemeConfig();
+  const { setMenuColor, progress, setHeaderMode } = useThemeConfig();
   useEffect(() => {
+    if (progress === true) {
+      setBannerTextLoad(false);
+    } else {
+      setTimeout(() => {
+        setBannerTextLoad(true);
+      }, 1000);
+    }
+
     setTimeout(() => {
-        setLoading(progress);  
-    }, 500);    
-  },[progress])
+      setLoading(progress);
+    }, 500);
+  }, [progress]);
   useEffect(() => {
+    setMenuColor(false);
+    setHeaderMode(false);
     const video = videoRef.current;
     setTimeout(() => {
+      setBannerTextLoad(true);
       setLoading(true);
       setImageLoading(true);
-      video.play()
+      video.play();
     }, 1000);
     const bar = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.animation-trigger',
-          start: `top center`,
-          end: `bottom center`,
-          scrub: 1,
-          markers: false
-        }
-      });
-      bar.to(".svg-circle-animation", { rotation: 180, yPercent:200 });
-      const panels = gsap.utils.toArray(".trigger-text-animation");
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: panels[0],
-          start: "bottom 50px",
-          end: "top top",
-          scrub: 1,
-          markers: false,
-          onEnter: ({ progress, direction, isActive }) => {
-            setMenuColor(true)
-          },
-          onLeaveBack: ({ progress, direction, isActive }) => {
-            setMenuColor(false)
-          },
+      scrollTrigger: {
+        trigger: ".animation-trigger",
+        start: `top center`,
+        end: `bottom center`,
+        scrub: 1,
+        markers: false,
+      },
+    });
+    bar.to(".svg-circle-animation", { rotation: 180, yPercent: 200 });
+    const panels = gsap.utils.toArray(".trigger-text-animation");
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: panels[0],
+        start: "bottom 50px",
+        end: "top top",
+        scrub: 1,
+        markers: false,
+        onEnter: ({ progress, direction, isActive }) => {
+          setMenuColor(true);
         },
-      });
+        onLeaveBack: ({ progress, direction, isActive }) => {
+          setMenuColor(false);
+        },
+      },
+    });
   }, []);
   return (
     <section className="overflow-hidden relative">
@@ -62,30 +74,36 @@ const Banner = () => {
       </Wrapper>
       <Wrapper className="bg-primary h-full w-[calc(16.66667%+30px)] right-0 top-0 absolute max-sm-tab:hidden"></Wrapper>
       <Wrapper className="md:w-[calc(83.33333%-30px)] md:h-[50rem] lgl:h-[64rem] max-sm-tab:h-[35.625rem]">
-      <Wrapper
-                className={` trigger-text-animation
+        <Wrapper
+          className={` trigger-text-animation
               relative overflow-hidden h-full
               before:content before:bg-dark
               before:absolute before:top-0 before:h-full before:w-full before:left-0 before:z-[1] before:duration-[1.3s] before:ease-cubic-22 before:delay-[.3s]              
-              ${imageLoading ? 'before:translate-y-[101%]' : 'before:translate-y-[0%]'}
+              ${
+                imageLoading
+                  ? "before:translate-y-[101%]"
+                  : "before:translate-y-[0%]"
+              }
               `}
-              >
-        <Image
-           className={`object-cover w-full h-full duration-1000 ease-cubic-22 delay-[.3s] ${imageLoading ? 'scale-x-[1]' : 'scale-[1.3]'}`}
-          alt="Banner Image"
-          src={BannerImage.src}
-          sizes="100vw"
-          width={BannerImage.width}
-          height={BannerImage.height}
-        />
-         </Wrapper>
+        >
+          <Image
+            className={`object-cover w-full h-full duration-1000 ease-cubic-22 delay-[.3s] ${
+              imageLoading ? "scale-x-[1]" : "scale-[1.3]"
+            }`}
+            alt="Banner Image"
+            src={BannerImage.src}
+            sizes="100vw"
+            width={BannerImage.width}
+            height={BannerImage.height}
+          />
+        </Wrapper>
       </Wrapper>
       <Container className="md:mt-[-31.25rem] max-sm-tab:mt-[-15.625rem] animation-trigger">
         <p className="anim-title relative z-10">
           <span className="overflow-hidden block">
             <span
               className={`block max-lgl:text-[calc(1.8375rem+10.05vw)] text-[9.375rem] leading-none font-bold outline-text  duration-1000 ease-cubic-22 ${
-                loading ? "translate-y-[0%]" : "translate-y-[110%]"
+                bannerTextLoad ? "translate-y-[0%]" : "translate-y-[110%]"
               }`}
             >
               back to
@@ -94,7 +112,7 @@ const Banner = () => {
           <span className="overflow-hidden block">
             <span
               className={`block max-lgl:text-[calc(1.8375rem+10.05vw)] ease-cubic-22 text-[9.375rem] leading-none font-bold text-white duration-1000 ${
-                loading ? "translate-y-[0%]" : "translate-y-[-110%]"
+                bannerTextLoad ? "translate-y-[0%]" : "translate-y-[-110%]"
               }`}
             >
               results
@@ -140,13 +158,17 @@ const Banner = () => {
                   ></path>
                 </svg>
               </Wrapper>
-              <Wrapper className={ `video-teaser__inner group overflow-hidden absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center before:content before:bg-[#183330]
+              <Wrapper
+                className={`video-teaser__inner group overflow-hidden absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center before:content before:bg-[#183330]
               before:absolute before:top-0 before:h-full before:w-full before:left-0 before:z-[1] before:duration-[1s] before:ease-cubic-22 before:delay-[.3s]
               ${
-                imageLoading ? "before:translate-x-[-101%]" : "before:translate-x-[0%]"
-              }`}>
+                imageLoading
+                  ? "before:translate-x-[-101%]"
+                  : "before:translate-x-[0%]"
+              }`}
+              >
                 <video
-                    ref={videoRef}
+                  ref={videoRef}
                   width="320"
                   height="240"
                   className="absolute top-0 left-0 w-full h-full"
@@ -154,14 +176,21 @@ const Banner = () => {
                   loop="loop"
                   autoPlay={loading}
                   muted={loading}
-                  playsInline                  
+                  playsInline
                   poster={VideoPoster.src}
                 >
-                  <source type="video/mp4" src="https://videos.ctfassets.net/81qkq901sdfk/SoNpBSFFIeg7Hk0txFGNC/5fe07317024576dd242a9626c2df3629/Final-16x9-Fitlab-720.mp4" />
+                  <source
+                    type="video/mp4"
+                    src="https://videos.ctfassets.net/81qkq901sdfk/SoNpBSFFIeg7Hk0txFGNC/5fe07317024576dd242a9626c2df3629/Final-16x9-Fitlab-720.mp4"
+                  />
                 </video>
-                <Wrapper onClick={()=> setVideo(prevState => !prevState)} className={`absolute top-0 left-0 w-full h-full flex items-center justify-center video-teaser__btn group-hover:opacity-100 ease-in-out duration-[0.3s] ${video ? 'opacity-100' : 'opacity-0 '}`}>
+                <Wrapper
+                  onClick={() => setVideo((prevState) => !prevState)}
+                  className={`absolute top-0 left-0 w-full h-full flex items-center justify-center video-teaser__btn group-hover:opacity-100 ease-in-out duration-[0.3s] ${
+                    video ? "opacity-100" : "opacity-0 "
+                  }`}
+                >
                   <span
-                  
                     data-text-play="Play video"
                     data-text-pause="Pause video"
                     className={`video-teaser__btn__text block text-center relative font-bold text-transparent lowercase overflow-hidden
@@ -171,7 +200,7 @@ const Banner = () => {
                     after:content-[attr(data-text-pause)]
                     after:text-white after:text-center
                     after:absolute after:w-full after:left-0 after:duration-[.3s]  after:transition-transform  after:ease-cubic-22
-                     ${video ? 'is-paused' : 'is-playing'} `}
+                     ${video ? "is-paused" : "is-playing"} `}
                   >
                     Pause video
                   </span>
@@ -184,13 +213,15 @@ const Banner = () => {
           <Wrapper className="md:max-w-[58.33333%] w-full px-[15px]">
             <Wrapper className="p-[1.875rem] md:p-[3.125rem] md:mt-[-5rem] bg-white">
               <h1 className="text-[1.5625rem] mb-[.5em] leading-none font-bold lowercase text-dark max-sm-tab:text-[calc(1.05625rem+.675vw)]">
-              personal training enschede
+                personal training enschede
               </h1>
               <Wrapper className="markdown">
                 <p className="text-[1rem] md:text-[1.125rem] font-normal text-black leading-[1.8]">
                   <strong>
-                  To fall off? Build muscle? Want to get fitter? Build up fitness? Whatever goals you have: start now at essence: With our complete guidance, you can be sure that you will really achieve your goals.
-
+                    To fall off? Build muscle? Want to get fitter? Build up
+                    fitness? Whatever goals you have: start now at essence: With
+                    our complete guidance, you can be sure that you will really
+                    achieve your goals.
                   </strong>
                 </p>
               </Wrapper>

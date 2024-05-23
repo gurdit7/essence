@@ -10,22 +10,28 @@ export function useThemeConfig() {
 export const ThemeConfiger =  ({children}) => {
   const [bgColor, setBgColor] = useState('bg-[#f8f8f8]');
   const [menuColor, setMenuColor] = useState(false);
+  const [menuBgColor, setMenuBgColor] = useState(false);
   const [progress, setProgress] = useState(false);
   const [headerMode, setHeaderMode] = useState(false);
   const [logoAnimation, setLogoAnimation] = useState(true);
+  const [leaveEnterPage, setLeaveEnterPage] = useState(false);
   const router = useRouter();  
   const pageChanger = (e)=>{
     e.preventDefault();
-    console.log(e)
     setProgress(true);
     setLogoAnimation(false)
     setTimeout(() => {
-      setMenuColor(false)
-      setHeaderMode(false)
-      setLogoAnimation(true)
+      setLeaveEnterPage(true)
+    }, 400);
+    setTimeout(() => {
       router.push(e.target.href)
-    }, 1000);
-
+    }, 1800);
+    setTimeout(() => {      
+      setMenuBgColor(false)
+      setLogoAnimation(true)
+      setLeaveEnterPage(false)
+    }, 1900);
+  
   }
   const value= {
     bgColor,
@@ -38,7 +44,11 @@ export const ThemeConfiger =  ({children}) => {
     headerMode,
     setHeaderMode,
     logoAnimation,
-    setLogoAnimation 
+    setLogoAnimation,
+    leaveEnterPage,
+    setLeaveEnterPage,
+    menuBgColor,
+    setMenuBgColor 
   };
 
   return (

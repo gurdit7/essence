@@ -7,10 +7,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useThemeConfig } from "@/app/contexts/theme/ThemeConfigure";
 import { links, menu, menu2 } from "@/app/data/default";
+import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 const Header = () => {
-  const { menuColor, pageChanger, progress, headerMode, logoAnimation } = useThemeConfig();
+  const path = usePathname();
+  const { menuColor, menuBgColor, pageChanger, progress, headerMode, logoAnimation, leaveEnterPage } = useThemeConfig();
   const [loading, setLoading] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [openMenuClose, setOpenMenuClose] = useState("delay-[.0s]");
@@ -22,14 +24,10 @@ const Header = () => {
     }, 800);
   };  
   useEffect(() => {    
-    setTimeout(() => {      
-      setOpenMenu(false);  
-    }, 500);    
+      setOpenMenu(false);     
   },[progress])
-  useEffect(() => {    
-    setTimeout(() => {      
-      setLoading(logoAnimation);  
-    }, 500);    
+  useEffect(() => {        
+      setLoading(logoAnimation);    
   },[logoAnimation])
 
   useEffect(() => {
@@ -67,11 +65,11 @@ const Header = () => {
             menuToggle();
           }}
           className={`hamburger-toggle relative z-50 w-[60px] h-[60px] flex items-center justify-center rounded-full  duration-[.2s] ease-in ${
-            menuColor ? "is-shown bg-[#f4f2f2]" : ""
+            menuBgColor ? "is-shown bg-[#f4f2f2]" : ""
           }  ${openMenu ? "is-open !bg-transparent" : openMenuClose}`}
         >
           <ul className="wrapper w-[26px] relative ">
-            <li className={`wrapper__hamburger overflow-hidden`}>
+            <li className={`wrapper__hamburger overflow-hidden ${menuColor ? 'header-dark-active' : ''}`}>
               <span
                 className={`h-[3px]  block ${
                   menuColor ? "bg-[#121212]" : "bg-white"
@@ -153,7 +151,7 @@ const Header = () => {
                       href={item.link}           
                       data-text={item.label}      
                       onClick={pageChanger}            
-                      className="cursor-pointer max-lgl:text-[calc(1.25rem+3vw)] text-[3.5rem] tracking-[.02em] inline-block group-[.is-shown]:translate-y-[0%] group-[.is-shown]:delay-[.63s] delay-[0s] translate-y-[101%] ease-cubic-22 duration-1000 relative font-bold leading-[1.3] stroke-text lowercase before:content-[attr(data-text)] before:absolute before:top-[0px] before:left-0 before:whitespace-nowrap before:max-w-0 before:duration-[.8s] before:ease-cubic-22 before:transition-all before:overflow-hidden hover:before:max-w-full"
+                      className={`${ item.link === path ? 'active-link pointer-events-none'  : ''} cursor-pointer max-lgl:text-[calc(1.25rem+3vw)] text-[3.5rem] tracking-[.02em] inline-block group-[.is-shown]:translate-y-[0%] group-[.is-shown]:delay-[.63s] delay-[0s] translate-y-[101%] ease-cubic-22 duration-1000 relative font-bold leading-[1.3] stroke-text lowercase before:content-[attr(data-text)] before:absolute before:top-[0px] before:left-0 before:whitespace-nowrap before:max-w-0 before:duration-[.8s] before:ease-cubic-22 before:transition-all before:overflow-hidden hover:before:max-w-full`}
                     >
                       {item.label}
                     </Link>
@@ -172,7 +170,7 @@ const Header = () => {
                       href={item.link}
                       data-text={item.label}
                       onClick={pageChanger} 
-                      className="max-lgl:text-[calc(1.075rem+.9vw)] text-[1.75rem] tracking-[.02em] text-white menu-stroke-link inline-block group-[.is-shown]:translate-y-[0%] group-[.is-shown]:delay-[.75s] delay-[0s] translate-y-[101%] ease-cubic-22 duration-1000 relative font-bold leading-[1.3] lowercase before:content-[attr(data-text)] before:absolute before:top-[0px] before:left-0 before:whitespace-nowrap before:max-w-full before:duration-[.8s] before:ease-cubic-22 before:transition-all before:overflow-hidden hover:before:max-w-0"
+                      className={`${ item.link === path ? 'active-link-sm pointer-events-none'  : ''} max-lgl:text-[calc(1.075rem+.9vw)] text-[1.75rem] tracking-[.02em] text-white menu-stroke-link inline-block group-[.is-shown]:translate-y-[0%] group-[.is-shown]:delay-[.75s] delay-[0s] translate-y-[101%] ease-cubic-22 duration-1000 relative font-bold leading-[1.3] lowercase before:content-[attr(data-text)] before:absolute before:top-[0px] before:left-0 before:whitespace-nowrap before:max-w-full before:duration-[.8s] before:ease-cubic-22 before:transition-all before:overflow-hidden hover:before:max-w-0`}
                     >
                       {item.label}
                     </Link>
@@ -191,7 +189,7 @@ const Header = () => {
                       href={item.link}
                       data-text={item.label}
                       onClick={pageChanger} 
-                      className="max-lgl:text-[calc(1.075rem+.9vw)] text-[1.75rem] tracking-[.02em] text-white menu-stroke-link inline-block group-[.is-shown]:translate-y-[0%] group-[.is-shown]:delay-[.75s] delay-[0s] translate-y-[101%] ease-cubic-22 duration-1000 relative font-bold leading-[1.3] lowercase before:content-[attr(data-text)] before:absolute before:top-[0px] before:left-0 before:whitespace-nowrap before:max-w-full before:duration-[.8s] before:ease-cubic-22 before:transition-all before:overflow-hidden hover:before:max-w-0"
+                      className={`${ item.link === path ? 'active-link-sm pointer-events-none'  : ''} max-lgl:text-[calc(1.075rem+.9vw)] text-[1.75rem] tracking-[.02em] text-white menu-stroke-link inline-block group-[.is-shown]:translate-y-[0%] group-[.is-shown]:delay-[.75s] delay-[0s] translate-y-[101%] ease-cubic-22 duration-1000 relative font-bold leading-[1.3] lowercase before:content-[attr(data-text)] before:absolute before:top-[0px] before:left-0 before:whitespace-nowrap before:max-w-full before:duration-[.8s] before:ease-cubic-22 before:transition-all before:overflow-hidden hover:before:max-w-0`}
                     >
                       {item.label}
                     </Link>
@@ -203,7 +201,7 @@ const Header = () => {
   
           </Wrapper>
         </Wrapper>   
-          <Wrapper className={`fixed top-0 left-0 w-full h-full z-[9999] bg-white ease-cubic-22  ${progress ? 'translate-x-[0%] delay-[0.8s] duration-[1.2s]' : 'duration-[0.5s] translate-x-[100%] '} `}>
+          <Wrapper className={`fixed top-0 left-0 w-full h-full z-[9999] bg-white ease-cubic-22  ${leaveEnterPage ? 'translate-x-[0%] delay-[0.5s] duration-[.8s]' : 'duration-[0.8s] delay-0 translate-x-[100%] '} `}>
       
           </Wrapper>
           </>

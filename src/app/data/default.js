@@ -15,11 +15,11 @@ export const links = [
 
   export const menu = [
     {
-      link:'/pages/personal-training-enschede',
+      link:'/',
       label:'Home'
     },
     {
-      link:'/pages/duo-personal-training-enschede',
+      link:'/pages/about',
       label:'About'
     },
     {

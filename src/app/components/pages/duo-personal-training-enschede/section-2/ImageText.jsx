@@ -9,11 +9,12 @@ import Exclusive from "../../../../assets/images/personal-training-enschede/excl
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 const ImageText = () => {
-  const { setBgColor, pageChanger } = useThemeConfig();
+  const { pageChanger } = useThemeConfig();
+  const [bgColor, setBgColor] = useState('bg-secondary-100');
   useEffect(() => {
     const panels = gsap.utils.toArray(".trigger-animation-pts-section");
     gsap.timeline({
@@ -52,10 +53,10 @@ const ImageText = () => {
         scrub: 1,
         markers: false,
         onEnter: ({ progress, direction, isActive }) => {
-          setBgColor("bg-white");
+          setBgColor("!bg-white");
         },
         onLeaveBack: ({ progress, direction, isActive }) => {
-          setBgColor("bg-secondary-100");
+          setBgColor("!bg-secondary-100");
         },
       },
     });
@@ -361,6 +362,7 @@ const ImageText = () => {
           <Wrapper className="bg-white h-full w-[calc(16.66667%+30px)] right-0 top-0 absolute max-sm-tab:hidden"></Wrapper>
         </Wrapper>
       </section>
+      <Wrapper className={`duration-[1s] ease-in-out fixed top-0 left-0 w-full bottom-0 h-full z-[-2] ${bgColor}`}></Wrapper>
     </>
   );
 };
