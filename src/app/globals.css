@@ -71,3 +71,17 @@ p{
     -webkit-text-stroke-color: #121212;
     -webkit-text-stroke-width: .012em;
     }
+    
+.marquee__track{
+  -webkit-animation: marqueeAnimation 50s linear infinite;
+  animation: marqueeAnimation 50s linear infinite;
+  }
+  @keyframes marqueeAnimation {
+      0% {
+          transform: translateZ(0)
+      }
+  
+      to {
+          transform: translate3d(-100%,0,0)
+      }
+  }

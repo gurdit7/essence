@@ -2,11 +2,38 @@
 import Wrapper from "@/app/components/ui/wrapper/Wrapper";
 import "./style.css";
 import Container from "@/app/components/ui/contianer/Container";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Facebook from '../../assets/icons/facebook.svg'
 import Instagram from '../../assets/icons/instagram.svg'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const Footer = () => {  
+  useEffect(()=>{
+    const panels = gsap.utils.toArray("footer");
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: panels[0],
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        markers: false,
+        onEnter: ({ progress, direction, isActive }) => {       
+          panels[0].classList.add("is-shown");
+        },
+        onEnterBack: ({ progress, direction, isActive }) => {
+          panels[0].classList.add("is-shown");
+        },
+        onLeave: ({ progress, direction, isActive }) => {
+          panels[0].classList.remove("is-shown");
+        },
+        onLeaveBack: ({ progress, direction, isActive }) => {
+          panels[0].classList.remove("is-shown");
+        },
+      },
+    });
+  })
   const [radio, setRadio] = useState("");
   const [radioValue, setRadioValue] = useState("");
   const values = [
@@ -28,7 +55,7 @@ const Footer = () => {
     setRadioValue(e.target.value);
   };
   return (
-    <footer className="mb-[12.5rem] md:mb-[6.25rem]">
+    <footer className="mb-[12.5rem] md:mb-[6.25rem] group">
       <Wrapper className="bg-[#183330] pb-[6.25rem] relative z-10">
         <Wrapper className="lgl:py-[3.75rem] smm:py-[4vw]"> 
           <Wrapper className="marquee overflow-hidden whitespace-nowrap relative z-10">
@@ -143,7 +170,7 @@ const Footer = () => {
           </Wrapper>
         </Container>
       </Wrapper>
-      <Wrapper className="footer-address fixed bottom-0 w-full left-0 p-[35px] z-[-1] md:h-[6.25rem] h-[12.5rem]">
+      <Wrapper className="footer-address fixed bottom-0 w-full left-0 p-[35px] z-[-1] md:h-[6.25rem] h-[12.5rem] hidden group-[.is-shown]:block">
         <address className="not-italic flex justify-center items-center max-sm-tab:flex-col">
           <p className="text-[grey] max-sm-tab:text-base text-center">
             Getfertplein 125, 7512 HK Enschede,{" "}

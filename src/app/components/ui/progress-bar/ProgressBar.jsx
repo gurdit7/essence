@@ -12,7 +12,7 @@ const ProgressBar = () => {
     setTimeout(() => {
         setProgress(false)
         setLoading(false)
-    }, 1500);
+    }, 1800);
   },[progress])
   return (
     <>

@@ -8,7 +8,13 @@
     -webkit-text-stroke-color: #fff;
     -webkit-text-stroke-width: .012em;
     }
+.the-bg-img{
+background-image: url(../../../../assets/images/app/iphone-mockup.png);
+}
+
+@media only screen and (max-width:767px){
     .the-bg-img{
-        background-image: url(../../../../assets/images/app/iphone-mockup.png);
-    }
+        background-image: url(../../../../assets/images/app/iphone-mockup-xs-retina.png);
+        }
+}
     

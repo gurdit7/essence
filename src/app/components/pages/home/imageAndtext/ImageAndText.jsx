@@ -1,6 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Parallax } from "swiper/modules";
+import { Parallax, Navigation } from "swiper/modules";
+import "swiper/css/navigation";
 import "swiper/css";
 import "./style.css";
 import Image from "next/image";
@@ -18,10 +19,11 @@ const ImageAndText = () => {
       <Wrapper className="md:max-w-[calc(83.33333%-30px)] w-full  bg-dark">
         <Wrapper className="lgl:h-[37.5rem] smm:h-[20rem] mdm:h-[28.125rem] overflow-hidden">
           <Swiper
-          className="h-full"
+            navigation={{ nextEl: ".arrow-left", prevEl: ".arrow-right" }}
+            className="h-full"
             spaceBetween={0}
             slidesPerView={1}
-            modules={[Parallax]}
+            modules={[Parallax, Navigation]}
             speed={1000}
           >
             <SwiperSlide>
@@ -81,7 +83,7 @@ const ImageAndText = () => {
             aria-label="Next slide"
             type="button"
             name="slider-btn"
-            className="md:ml-auto ml-[66.66667%] block group w-[7.9375rem] h-[7.9375rem] top-[3.96875rem] relative is-active bg-white rounded-full overflow-hidden
+            className="arrow-left md:ml-auto ml-[66.66667%] block group w-[7.9375rem] h-[7.9375rem] top-[3.96875rem] relative is-active bg-white rounded-full overflow-hidden
             before:absolute before:content before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-primary before:rounded-full before:scale-[.40157]
             before:duration-500 before:ease-cubic-22 hover:before:scale-90  before:z-10
             "
@@ -126,33 +128,33 @@ const ImageAndText = () => {
             </div>
           </button>
         </Container>
-        </Wrapper>
-        <Wrapper className="bg-dark py-[6.25rem] ">
-          <Container>
-            <Wrapper className="flex flex-wrap mx-[-15px]">
-              <Wrapper className="md:max-w-[58.33333%] w-full px-[15px]">
-                <h2 className="max-lgl:text-[calc(1.525rem+6.3vw)] text-[6.25rem] font-bold leading-none">
-                  <span className="overflow-hidden block">
-                    <span className="type-outline-stroke block lowercase">
-                      Stick with
-                    </span>
+      </Wrapper>
+      <Wrapper className="bg-dark py-[6.25rem] ">
+        <Container>
+          <Wrapper className="flex flex-wrap mx-[-15px]">
+            <Wrapper className="md:max-w-[58.33333%] w-full px-[15px]">
+              <h2 className="max-lgl:text-[calc(1.525rem+6.3vw)] text-[6.25rem] font-bold leading-none">
+                <span className="overflow-hidden block">
+                  <span className="type-outline-stroke block lowercase">
+                    Stick with
                   </span>
-                  <span className="overflow-hidden block">
-                    <span className="block text-white">the facts</span>
-                  </span>
-                </h2>
-                <p className="text-white mb-[1rem] max-sm-tab:text-base">
-                  Anyone can just train. Essence: does it differently. We create
-                  a unique, individual program for you that exactly matches your
-                  wishes and condition. Based on scientific evidence and
-                  substantiated with facts. By the way, age plays no role. The
-                  fastest way to results.
-                </p>
-              </Wrapper>
+                </span>
+                <span className="overflow-hidden block">
+                  <span className="block text-white">the facts</span>
+                </span>
+              </h2>
+              <p className="text-white mb-[1rem] max-sm-tab:text-base">
+                Anyone can just train. Essence: does it differently. We create a
+                unique, individual program for you that exactly matches your
+                wishes and condition. Based on scientific evidence and
+                substantiated with facts. By the way, age plays no role. The
+                fastest way to results.
+              </p>
             </Wrapper>
-          </Container>
-        </Wrapper>
-  
+          </Wrapper>
+        </Container>
+      </Wrapper>
+
       <Wrapper className="bg-primary h-full w-[calc(16.66667%+30px)] right-0 top-0 absolute max-sm-tab:hidden"></Wrapper>
     </Wrapper>
   );

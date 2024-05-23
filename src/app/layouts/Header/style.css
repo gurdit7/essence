@@ -21,7 +21,9 @@ background-color:#fff;
 .is-shown.hamburger-toggle span:after{
     background-color:#121212;
 }
-
+.header-dark-active span:after{
+    background-color:#121212;
+}
 .hamburger-toggle .wrapper__hamburger span:first-child::after{
     left: 2.25rem;
     }
@@ -70,4 +72,10 @@ transition: transform .5s cubic-bezier(.22,.61,.36,1), opacity .5s linear;
 }
 .menu-stroke-link::before{
     -webkit-text-fill-color:#e9d1ca; 
+}
+.menu-drawer .active-link::before{
+    max-width: 100%;
+}
+.menu-drawer .active-link-sm::before{
+    max-width: 0%;
 }
